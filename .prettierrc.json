@@ -1,0 +1,12 @@
+{
+  "singleQuote": false,
+  "tabWidth": 2,
+  "semi": true,
+  "trailingComma": "es5",
+  "printWidth": 120,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "plugins": [
+    "prettier-plugin-pkg"
+  ]
+}
