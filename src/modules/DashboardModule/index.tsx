@@ -85,7 +85,7 @@ const Cell: FC<{ isInitialized: boolean; cell: CellModel; grid: GridStack | null
 const DashboardModule = observer(() => {
   const dashboardId = useId();
   const { cells, initCells, onInitGrid, onUpdateCells } = useGridLayoutStore();
-  const { data, isFetched, isLoading, dataUpdatedAt } = useQuery<
+  const { data, isLoading, dataUpdatedAt } = useQuery<
     AxiosResponse<{ cells: CellModel[] }>,
     AxiosError,
     {
@@ -179,6 +179,7 @@ const DashboardModule = observer(() => {
 
   console.log(cells);
 
+ 
   return (
     <div>
       <Grid cells={cells} onInit={onInitGrid} onChange={onChange} cell={Cell} onRemove={onRemove} />
