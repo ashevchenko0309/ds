@@ -1,4 +1,4 @@
-export const DASHBOARD_ENDPOINTS = {
+export const DASHBOARDS_ENDPOINTS = {
   root: '/dashboards',
-  get: (id: string) => `/dashboards/${id}`
+  get: (id: string) => `/dashboards/${id}`,
 }
