@@ -7,6 +7,7 @@ import { lazy, Suspense } from "react";
 import ModuleLoader from "../../components/Loaders/ModuleLoader.tsx";
 
 const DashboardPage = lazy(() => import("../../pages/DashboardPage"));
+const ConnectionsPage = lazy(() => import("../../pages/ConnectionsPage"));
 
 export const buildBrowserRoutes = () =>
   createBrowserRouter([
@@ -24,6 +25,16 @@ export const buildBrowserRoutes = () =>
             <ErrorBoundary>
               <Suspense fallback={<ModuleLoader />}>
                 <DashboardPage />
+              </Suspense>
+            </ErrorBoundary>
+          ),
+        },
+        {
+          path: ROUTES.CONNECTIONS,
+          element: (
+            <ErrorBoundary>
+              <Suspense fallback={<ModuleLoader />}>
+                <ConnectionsPage />
               </Suspense>
             </ErrorBoundary>
           ),

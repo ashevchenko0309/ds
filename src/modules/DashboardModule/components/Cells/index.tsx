@@ -14,7 +14,11 @@ const DashboardCell: FC<DashboardCellProps> = ({ cell }) => {
   return <div>unknown type: {cell.type}</div>;
 };
 
-const DashboardCellContainer = (props) => {
+interface DashboardCellContainerProps extends DashboardCellProps {
+  onClone?: () => void;
+}
+
+const DashboardCellContainer: FC<DashboardCellContainerProps> = (props) => {
   return (
     <div className="bg-gray-200 shadow-2xl size-full">
       <DashboardCell {...props} />
