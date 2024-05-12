@@ -1,4 +1,4 @@
-import { Button } from "~/components/ui/button";
+import { Button } from "~/components/uiKit/ui/button.tsx";
 
 const UIKitElements = () => {
   return (
