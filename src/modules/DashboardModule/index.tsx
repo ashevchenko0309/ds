@@ -182,9 +182,6 @@ const DashboardModule = observer(() => {
  
   return (
     <div>
-      {/* nav header */}
-      
-
       <Grid cells={cells} onInit={onInitGrid} onChange={onChange} cell={Cell} onRemove={onRemove} />
       {/*<div className="size-full">*/}
       {/*  <div className="grid-stack controlled">*/}
