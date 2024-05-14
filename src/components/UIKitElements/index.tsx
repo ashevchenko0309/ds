@@ -8,14 +8,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { Form } from "../uiKit/ui/form";
-import { 
-  Select, 
-  SelectContent, 
-  SelectGroup, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
 } from "../uiKit/ui/select";
+import FormContainer from "../FormContainer";
 
 const schema = z.object({
   databaseName: z.string().min(1, {
@@ -23,16 +24,7 @@ const schema = z.object({
   }),
 })
 
-type Data = z.infer<typeof schema>;
-
 const UIKitElements = () => {
-  const form = useForm<Data>({
-    resolver: zodResolver(schema),
-    defaultValues: {
-      databaseName: "",
-    },
-  })
-
   return (
     <>
       <div className="flex">
@@ -49,16 +41,17 @@ const UIKitElements = () => {
               </Button>
             }
           />
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(() => alert("OK"))}>
-              <FormInput
-                name="databaseName"
-                control={form.control}
-                placeholder="Database name"
-              />
-              <Button type="submit">OK</Button>
-            </form>
-          </Form>
+          <FormContainer
+            defaultValues={{ databaseName: "" }}
+            schema={schema}
+            onSubmit={() => alert("OK")}
+          >
+            <FormInput
+              name="databaseName"
+              placeholder="Database name"
+            />
+            <Button type="submit">OK</Button>
+          </FormContainer>
 
         </div>
 

@@ -1,4 +1,4 @@
-import { Control, FieldValues, Path } from "react-hook-form"
+import { FieldValues, Path, useFormContext } from "react-hook-form"
 import {
   FormControl,
   FormDescription,
@@ -10,14 +10,12 @@ import {
 import { Input, InputProps } from "../uiKit/ui/input"
 
 type FormInputProps<T extends FieldValues> = InputProps & {
-  control: Control<T>;
   name: Path<T>;
   description?: string;
   label?: string;
 };
 
 const FormInput = <T extends FieldValues>({
-  control,
   name,
   placeholder,
   description,
@@ -26,6 +24,8 @@ const FormInput = <T extends FieldValues>({
   endIcon,
   error = ""
 }: FormInputProps<T>) => {
+  const { control } = useFormContext();
+  
   return (
     <FormField
       control={control}
