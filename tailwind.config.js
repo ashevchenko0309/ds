@@ -27,7 +27,8 @@ module.exports = {
     },
     extend: {
       spacing: {
-        8.5: "2.125rem"
+        4.5: "18px",
+        8.5: "2.125rem",
       },
       fontFamily: {
         'Inter': ['"Inter"'],
@@ -45,7 +46,7 @@ module.exports = {
         },
         primary: {
           0: "#FFF",
-          70: "#FFFFFFB2",
+          70: "rgba(255, 255, 255, 0.7)",
           100: "#F7F7F7",
           200: "#F0F0F0",
           300: "#CFD0D0",
@@ -53,6 +54,7 @@ module.exports = {
           700: "#323232",
           800: "#1A1A1A",
           900: "#141414",
+          "900-40": "rgba(20, 20, 20, 0.4)",
         },
         warning: {
           100: "#FED68C",
