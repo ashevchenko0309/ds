@@ -7,3 +7,21 @@
     font-family: "Inter", sans-serif;
   }
 }
+
+@layer components {
+  .default-button {
+    @apply bg-gradient-to-r from-primary-700 to-primary-800 hover:from-btn-hover hover:to-btn-hover-1 active:from-btn-active active:to-btn-active-1;
+  }
+  .destructive-button {
+    @apply bg-gradient-to-r from-error-100 to-error-900;
+  }
+  .success-button {
+    @apply bg-gradient-to-r from-success-100 to-success-900;
+  }
+  .neutral-button {
+    @apply bg-gradient-to-r from-warning-100 to-warning-900;
+  }
+  .outline-button {
+    @apply border-btn-outline-default hover:border-primary-800 active:border-btn-outline-active;
+  }
+}
