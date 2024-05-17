@@ -4,7 +4,7 @@ import { Badge } from "../uiKit/ui/badge";
 import { Input } from "../uiKit/ui/input";
 import { Eye } from "lucide-react";
 import FormInput from "../FormInput";
-import { z } from "zod"
+import yup from "yup"
 import {
   Select,
   SelectContent,
@@ -16,8 +16,8 @@ import {
 import FormContainer from "../FormContainer";
 import SubmitButton from "../SubmitButton";
 
-const schema = z.object({
-  databaseName: z.string().min(1, {
+const schema = yup.object({
+  databaseName: yup.string().min(1, {
     message: "Database name must be at least 1 character.",
   }),
 })
