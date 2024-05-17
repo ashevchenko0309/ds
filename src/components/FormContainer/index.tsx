@@ -1,7 +1,7 @@
 import { DefaultValues, FieldValues, useForm } from "react-hook-form";
 import { Form } from "../uiKit/ui/form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import yup from "yup"
+import * as yup from "yup";
 
 export interface BaseFormContainerProps<FormFields extends FieldValues> {
   // onSubmit: SubmitHandler<FormFields>;

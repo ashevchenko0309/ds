@@ -4,7 +4,7 @@ import { Badge } from "../uiKit/ui/badge";
 import { Input } from "../uiKit/ui/input";
 import { Eye } from "lucide-react";
 import FormInput from "../FormInput";
-import yup from "yup"
+import * as yup from "yup";
 import {
   Select,
   SelectContent,
