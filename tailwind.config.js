@@ -35,14 +35,12 @@ module.exports = {
       },
       colors: {
         btn: {
-          "hover": "#606060",
-          "hover-1": "#3A3A3A",
-
-          "active": "#101010",
-          "active-1": "#3A3A3A",
-
-          "outline-default": "#32323219",
-          "outline-active": "#3A3A3A66",
+          "hover": "rgb(var(--color-btn-hover) / <alpha-value>)",
+          "hover-1": "rgb(var(--color-btn-hover-1) / <alpha-value>)",
+          "active": "rgb(var(--color-btn-active) / <alpha-value>)",
+          "active-1": "rgb(var(--color-btn-active-1) / <alpha-value>)",
+          "outline-default": "rgb(var(--color-btn-outline-default) / <alpha-value>)",
+          "outline-active": "rgb(var(--color-btn-outline-active) / <alpha-value>)",
         },
         primary: {
           0: "rgb(var(--color-primary-0) / <alpha-value>)",

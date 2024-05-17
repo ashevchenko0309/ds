@@ -30,6 +30,8 @@ const colorsForUpdate = () => ({
   '--color-warning-900': getRandomRGB(),
   '--color-success-100': getRandomRGB(),
   '--color-success-900': getRandomRGB(),
+  '--color-btn-hover': getRandomRGB(),
+  '--color-btn-hover-1': getRandomRGB(),
 });
 
 const UIKitElements = () => {
