@@ -15,14 +15,30 @@ import {
 } from "../uiKit/ui/select";
 import FormContainer from "../FormContainer";
 import SubmitButton from "../SubmitButton";
+import { getRandomRGB, updateCSSVariable } from "~/lib/uiKit/utils";
 
 const schema = yup.object({
-  databaseName: yup.string().min(1, {
-    message: "Database name must be at least 1 character.",
-  }),
+  databaseName: yup.string().min(1, "Database name must be at least 1 character."),
 })
 
+const colorsForUpdate = () => ({
+  '--color-primary-700': getRandomRGB(),
+  '--color-primary-800': getRandomRGB(),
+  '--color-error-100': getRandomRGB(),
+  '--color-error-900': getRandomRGB(),
+  '--color-warning-100': getRandomRGB(),
+  '--color-warning-900': getRandomRGB(),
+  '--color-success-100': getRandomRGB(),
+  '--color-success-900': getRandomRGB(),
+});
+
 const UIKitElements = () => {
+  const changeTheme = () => {
+    for (const [variable, value] of Object.entries(colorsForUpdate())) {
+      updateCSSVariable(variable, value);
+    }
+  };
+
   return (
     <>
       <div className="flex">
@@ -68,6 +84,10 @@ const UIKitElements = () => {
               </SelectGroup>
             </SelectContent>
           </Select>
+
+          <div>
+            <Button onClick={changeTheme}>Customize</Button>
+          </div>
         </div>
       </div>
 
