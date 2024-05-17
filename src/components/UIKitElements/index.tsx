@@ -4,10 +4,7 @@ import { Badge } from "../uiKit/ui/badge";
 import { Input } from "../uiKit/ui/input";
 import { Eye } from "lucide-react";
 import FormInput from "../FormInput";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
-import { Form } from "../uiKit/ui/form";
 import {
   Select,
   SelectContent,
@@ -17,6 +14,7 @@ import {
   SelectValue
 } from "../uiKit/ui/select";
 import FormContainer from "../FormContainer";
+import SubmitButton from "../SubmitButton";
 
 const schema = z.object({
   databaseName: z.string().min(1, {
@@ -44,13 +42,14 @@ const UIKitElements = () => {
           <FormContainer
             defaultValues={{ databaseName: "" }}
             schema={schema}
-            onSubmit={() => alert("OK")}
           >
             <FormInput
               name="databaseName"
               placeholder="Database name"
             />
-            <Button type="submit">OK</Button>
+            <SubmitButton onSubmit={() => alert("OK!")}>
+              OK
+            </SubmitButton>
           </FormContainer>
 
         </div>
