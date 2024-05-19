@@ -27,44 +27,42 @@ module.exports = {
     },
     extend: {
       spacing: {
-        8.5: "2.125rem"
+        4.5: "1.125rem",
+        8.5: "2.125rem",
       },
       fontFamily: {
         'Inter': ['"Inter"'],
       },
       colors: {
         btn: {
-          "hover": "#606060",
-          "hover-1": "#3A3A3A",
-
-          "active": "#101010",
-          "active-1": "#3A3A3A",
-
-          "outline-default": "#32323219",
-          "outline-active": "#3A3A3A66",
+          "hover": "rgb(var(--color-btn-hover) / <alpha-value>)",
+          "hover-1": "rgb(var(--color-btn-hover-1) / <alpha-value>)",
+          "active": "rgb(var(--color-btn-active) / <alpha-value>)",
+          "active-1": "rgb(var(--color-btn-active-1) / <alpha-value>)",
+          "outline-default": "rgb(var(--color-btn-outline-default) / <alpha-value>)",
+          "outline-active": "rgb(var(--color-btn-outline-active) / <alpha-value>)",
         },
         primary: {
-          0: "#FFF",
-          70: "#FFFFFFB2",
-          100: "#F7F7F7",
-          200: "#F0F0F0",
-          300: "#CFD0D0",
-          400: "#A0A0A2",
-          700: "#323232",
-          800: "#1A1A1A",
-          900: "#141414",
+          0: "rgb(var(--color-primary-0) / <alpha-value>)",
+          100: "rgb(var(--color-primary-100) / <alpha-value>)",
+          200: "rgb(var(--color-primary-200) / <alpha-value>)",
+          300: "rgb(var(--color-primary-300) / <alpha-value>)",
+          400: "rgb(var(--color-primary-400) / <alpha-value>)",
+          700: "rgb(var(--color-primary-700) / <alpha-value>)",
+          800: "rgb(var(--color-primary-800) / <alpha-value>)",
+          900: "rgb(var(--color-primary-900) / <alpha-value>)",
         },
         warning: {
-          100: "#FED68C",
-          900: "#F2C571",
+          100: "rgb(var(--color-warning-100) / <alpha-value>)",
+          900: "rgb(var(--color-warning-900) / <alpha-value>)",
         },
         error: {
-          100: "#EA6262",
-          900: "#D53B3B",
+          100: "rgb(var(--color-error-100) / <alpha-value>)",
+          900: "rgb(var(--color-error-900) / <alpha-value>)",
         },
         success: {
-          100: "#07D0B3",
-          900: "#0AB59D",
+          100: "rgb(var(--color-success-100) / <alpha-value>)",
+          900: "rgb(var(--color-success-900) / <alpha-value>)",
         },
       },
       keyframes: {

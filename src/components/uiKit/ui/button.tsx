@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-primary-700 to-primary-700 hover:from-btn-hover hover:to-btn-hover-1 active:from-btn-active active:to-btn-active-1 disabled:opacity-20 text-primary-0 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90",
+        default: "default-button disabled:opacity-20 text-primary-0 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90",
         destructive:
-          "bg-gradient-to-r from-error-100 to-error-900 text-primary-0 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
+          "destructive-button text-primary-0 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
         success:
-          "bg-gradient-to-r from-success-100 to-success-900 text-primary-0 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
+          "success-button text-primary-0 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
         neutral:
-          "bg-gradient-to-r from-neutral-100 <to-neutral></to-neutral>-900 text-primary-0 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
+          "neutral-button text-primary-900 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
         outline:
-          "border border-btn-outline-default hover:border-primary-800 active:border-btn-outline-active disabled:border-primary-700 disabled:opacity-20 bg-white hover:bg-gray-100 hover:text-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50",
+          "outline-button border disabled:border-primary-700 disabled:opacity-20 bg-white hover:bg-gray-100 hover:text-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50",
         secondary:
           "bg-gray-100 text-gray-900 hover:bg-gray-100/80 dark:bg-gray-800 dark:text-gray-50 dark:hover:bg-gray-800/80",
         ghost: "hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-50",
@@ -27,7 +27,7 @@ const buttonVariants = cva(
         default: "h-8.5 px-3 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        icon: "h-5 w-5 rounded-full",
       },
     },
     defaultVariants: {

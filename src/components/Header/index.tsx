@@ -21,7 +21,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <div className="flex items-center w-full mx-10 border-b border-[#F0F0F0]">
+    <div className="flex items-center w-full px-10 border-b border-[#F0F0F0]">
       <div className="relative flex w-full">
         <div className="mr-32 font-semibold text-[20px] py-5">Logo</div>
         <ul className="flex items-center gap-12 text-[14px]">
