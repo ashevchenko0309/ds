@@ -1,0 +1,1 @@
+{"title": "Sample Chart X,Y (Category)", "meta": {"x": {"type": "category", "label": "Category"}, "y": {"type": "number", "label": "Impressions"}}, "data": [{"category": "omer", "value": 224}, {"category": "andrii", "value": 71}, {"category": "gilad", "value": 192}]}

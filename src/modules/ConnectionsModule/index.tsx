@@ -4,30 +4,44 @@ import { Connection, ConnectionsResponse } from "../../shared/models/connections
 import { CONNECTIONS_ENDPOINTS } from "../../shared/api/endpoints/connections.ts";
 import { apiInstance } from "../../shared/api/axiosInstance.ts";
 import BaseTable from "../../components/Tables/BaseTable";
-import { useMemo } from "react";
+import { CSSProperties, useMemo } from "react";
 import useBaseTableState from "../../shared/hooks/table/useBaseTableState.ts";
 import { ColumnDef, TableState } from "@tanstack/react-table";
+import UIKitElements from "~/components/UIKitElements";
+import TestConnectionCell from "~/modules/ConnectionsModule/components/TestConnectionCell.tsx";
+
 
 const columns: ColumnDef<Connection>[] = [
   {
-    header: "Connection name",
-    accessorKey: 'name'
+    id: "Connection name",
+    accessorKey: "name",
+    enableResizing: false,
   },
   {
-    header: "Connection type",
-    accessorKey: 'type'
+    id: "Connection type",
+    accessorKey: "type",
+    enableResizing: false,
   },
   {
-    header: "status",
-    accessorKey: 'status'
-  },
-  {
-    header: "actions",
-    cell: () => {
-      return <button>action one</button>
+    id: "Status",
+    accessorKey: "status",
+    enableResizing: false,
+    meta: {
+      className: 'w-40'
     }
-  }
-]
+  },
+  {
+    id: "actions",
+    header: () => <p className="text-end">Actions</p>,
+    cell: () => {
+      return <TestConnectionCell />;
+    },
+    enableResizing: false,
+    meta: {
+      className: 'w-10'
+    }
+  },
+];
 
 const ConnectionsModule = () => {
   const { pagination, setPagination } = useBaseTableState();
@@ -49,6 +63,8 @@ const ConnectionsModule = () => {
 
   return (
     <div>
+      <UIKitElements />
+
       <BaseTable<Connection>
         columns={columns}
         state={tableState}
