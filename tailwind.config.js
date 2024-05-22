@@ -29,6 +29,7 @@ module.exports = {
       spacing: {
         4.5: "1.125rem",
         8.5: "2.125rem",
+        "expanded-textarea": "460px"
       },
       fontFamily: {
         'Inter': ['"Inter"'],
