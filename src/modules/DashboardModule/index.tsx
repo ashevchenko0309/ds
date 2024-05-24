@@ -10,6 +10,10 @@ import useMount from "../../shared/hooks/useMount.ts";
 import { GridStack } from "gridstack";
 import { GridStackElement } from "gridstack/dist/types";
 import Grid from "./components/Grid.tsx";
+// import Modal from "~/components/Modal/index.tsx";
+// import EditChartModal from "./components/EditChartModal/index.tsx";
+// import { Plus } from "lucide-react";
+// import * as yup from "yup";
 
 interface CellContentProps {
   id: string;
@@ -36,7 +40,6 @@ const CellContent: FC<CellContentProps> = ({ onClone, onDelete, onInit, id }) =>
     </div>
   );
 };
-
 interface CellProps {
   isInitialized: boolean;
   cell: CellModel;
@@ -95,6 +98,7 @@ const Cell: FC<CellProps> = observer(({ cell, grid, isInitialized }) => {
 });
 
 const DashboardModule = observer(() => {
+  // const [isOpened, setIsOpened] = useState(false);
   const dashboardId = useId();
   const { cells, initCells, onInitGrid } = useGridLayoutStore();
   const { data, isLoading, dataUpdatedAt } = useQuery<
@@ -133,14 +137,19 @@ const DashboardModule = observer(() => {
         </span>
 
         <Modal
-          text="Add chart"
+          defaultValues={{ chartName: "", capacity: "", period: "", chartType: "pie" }}
+          schema={yup.object({
+            chartName: yup.string().min(1, "Chart name must be at least 1 character."),
+          })}
           isOpened={isOpened}
           setIsOpened={setIsOpened}
           icon={Plus}
+          text="Add chart"
         >
           <EditChartModal setIsOpened={setIsOpened} />
         </Modal>
       </div> */}
+
       <Grid cells={cells} onInit={onInitGrid} onChange={onChange} cell={Cell} />
     </div>
   );

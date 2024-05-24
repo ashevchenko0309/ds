@@ -28,7 +28,10 @@ const Header = () => {
           {navLinks.map(({ label, path }) => {
             const isRouteSame = location.pathname === path;
             return (
-              <li className="cursor-pointer py-5">
+              <li
+                key={label}
+                className="cursor-pointer py-5"
+              >
                 <Button
                   className={`font-normal after:absolute after:bottom-0 after:content-[''] after:h-[1px] after:w-20 ${isRouteSame ? "after:bg-black" : `after:bg-transparent`}`}
                   onClick={() => navigate(path)}
