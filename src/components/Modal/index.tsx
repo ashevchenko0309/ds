@@ -34,7 +34,7 @@ const Modal: FC<ModalProps> = ({
 				? (
 					<>
 						{isOpened && createPortal(
-							<div className="absolute top-20 bottom-0 left-0 right-0 bg-white z-50">
+							<div className="absolute top-[75px] left-0 right-0 bg-primary-100">
 								{children}
 							</div>,
 							document.body
