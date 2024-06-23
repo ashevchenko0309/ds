@@ -9,19 +9,19 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "default-button disabled:opacity-20 text-primary-0 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90",
+        default: "default-button disabled:opacity-20 text-primary-0",
         destructive:
-          "destructive-button text-primary-0 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
+          "destructive-button text-primary-0 hover:bg-red-500/90",
         success:
-          "success-button text-primary-0 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
+          "success-button text-primary-0 hover:bg-red-500/90",
         neutral:
-          "neutral-button text-primary-900 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
+          "neutral-button text-primary-900 hover:bg-red-500/90",
         outline:
-          "outline-button border disabled:border-primary-700 disabled:opacity-20 bg-white hover:bg-gray-100 hover:text-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50",
+          "outline-button border disabled:border-primary-700 disabled:opacity-20 bg-white hover:bg-gray-100 hover:text-gray-900",
         secondary:
-          "bg-gray-100 text-gray-900 hover:bg-gray-100/80 dark:bg-gray-800 dark:text-gray-50 dark:hover:bg-gray-800/80",
-        ghost: "hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-gray-50",
-        link: "text-gray-900 dark:text-gray-50",
+          "bg-gray-100 text-gray-900 hover:bg-gray-100/80",
+        ghost: "hover:bg-gray-100 hover:text-gray-900",
+        link: "text-gray-900",
       },
       size: {
         default: "h-8.5 px-3 py-2",
@@ -50,6 +50,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        type="button"
         {...props}
       />
     )

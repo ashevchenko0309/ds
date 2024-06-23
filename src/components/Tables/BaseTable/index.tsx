@@ -19,6 +19,7 @@ interface BaseTableProps<TData extends RowData> {
   state: Partial<TableState>;
   isFetching: boolean;
   isEmpty: boolean;
+  isPagination?: boolean;
   onPaginationChange?: OnChangeFn<PaginationState>;
 }
 
@@ -28,6 +29,7 @@ const BaseTable = <TData extends RowData>({
   columns,
   isFetching,
   isEmpty,
+  isPagination = true,
   onPaginationChange,
 }: BaseTableProps<TData>) => {
   const rowCount = data.length;
@@ -91,7 +93,8 @@ const BaseTable = <TData extends RowData>({
           </Table>
         </div>
       </div>
-      <div className="flex items-center gap-2">
+      {isPagination ? (
+        <div className="flex items-center gap-2">
         <Button size="icon" variant="outline" onClick={() => table.firstPage()} disabled={!table.getCanPreviousPage()}>
           {"<<"}
         </Button>
@@ -127,7 +130,8 @@ const BaseTable = <TData extends RowData>({
             </option>
           ))}
         </select>
-      </div>
+        </div>
+      ): <></>}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { Connection, ConnectionsResponse } from "../../shared/models/connections
 import { CONNECTIONS_ENDPOINTS } from "../../shared/api/endpoints/connections.ts";
 import { apiInstance } from "../../shared/api/axiosInstance.ts";
 import BaseTable from "../../components/Tables/BaseTable";
-import { CSSProperties, useMemo } from "react";
+import { useMemo } from "react";
 import useBaseTableState from "../../shared/hooks/table/useBaseTableState.ts";
 import { ColumnDef, TableState } from "@tanstack/react-table";
 import UIKitElements from "~/components/UIKitElements";

@@ -30,7 +30,10 @@ const FormContainer = <T extends FieldValues>({
   return (
     <>
       <Form {...form}>
-        <form className={className}>
+        <form
+          className={className}
+          onKeyDown={(e) => e.key === "Enter" && e.preventDefault()}
+        >
           {children}
         </form>
       </Form>
